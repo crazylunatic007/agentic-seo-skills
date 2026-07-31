@@ -30,6 +30,13 @@ rows in context is slow and inconsistent:
 Both are stdlib-only Python 3, both report rather than change anything, and both accept
 Screaming Frog, Sitebulb, and Semrush export headers.
 
+## Prompts
+
+Each skill has a matching workflow prompt in [prompts/](prompts). Fill the bracketed placeholders
+and run. Prompts 6 and 8 call the bundled scripts and write CSV rather than pasting thousands of
+rows into chat, and prompt 8 comes in two parts because re-verification needs the first run's
+output saved.
+
 ## Design principles
 
 These are what the skills have in common, and the reason they behave differently from a prompt.

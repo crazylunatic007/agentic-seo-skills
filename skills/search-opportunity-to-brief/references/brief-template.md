@@ -92,6 +92,16 @@ Verify every URL exists before including it. Never guess a URL.
 Where the product genuinely belongs in the reader's task, and where it does not. Being explicit
 about where not to mention it is what keeps the page credible.
 
+## Claims requiring verification
+
+Anything a writer would otherwise state as fact: product capabilities, statistics, competitor
+behaviour, pricing. Name who verifies each one. Unverified claims are how a good page becomes a
+correction request.
+
+## Call to action
+
+What the reader should do next, and why it follows from the page rather than being bolted on.
+
 ## Meta
 
 Title tag and meta description, or leave blank for the writer with a note on the angle they should

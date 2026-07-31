@@ -72,15 +72,22 @@ Full scoring guidance and fix-type definitions are in `references/root-cause-gro
 
 ## Output
 
-| Rank | Issue | Root Cause | Fix Type | URLs Affected | High-Value URLs | Traffic at Risk | Impact | Effort | Confidence | Acceptance Criteria |
-|---|---|---|---|---:|---:|---:|---|---|---|---|
+| Rank | Issue | URLs Affected | High-Value URLs | Traffic at Risk | Likely Root Cause | Fix Type | Impact | Effort | Confidence | Recommended Fix | Acceptance Criteria |
+|---|---|---:|---:|---:|---|---|---|---|---|---|---|
 
 Acceptance criteria must be checkable by someone who is not an SEO. "Canonical tags fixed" is not
 acceptance criteria. "All URLs under /guides/ return a self-referencing canonical, verified on a
 sample of 20 URLs post-deploy" is. See `references/acceptance-criteria.md` for patterns.
 
-Follow the table with a short note on what was deliberately excluded and why. The excluded list is
-often the more useful half of the conversation.
+Follow the table with four short sections:
+
+- Issues that require further investigation
+- Issues excluded as low-value or intentional, with the reason
+- Missing data or incomplete crawl coverage
+- Dependencies between recommended fixes, and the order they should be done in
+
+The excluded list is often the more useful half of the conversation, and the dependency list is
+what stops a team fixing canonicals before the redirects those canonicals depend on.
 
 ## Human checkpoint
 

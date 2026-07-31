@@ -77,8 +77,8 @@ correct response is usually different.
 
 ## Output
 
-| Competitor | Traffic Change | Main Pages | Main Keywords | Likely Driver | Confidence | Relevance to Us | Recommended Response |
-|---|---:|---|---|---|---|---|---|
+| Competitor | Traffic Change | Main Growth Pages | Main Keywords | Branded or Non-Branded | Likely Driver | Relevance to Us | Recommended Response | Confidence |
+|---|---:|---|---|---|---|---|---|---|
 
 Recommended response is one of: monitor, update an existing page, create new content, investigate
 a product or positioning gap, or no action.

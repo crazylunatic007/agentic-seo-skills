@@ -24,8 +24,11 @@ Establish:
 1. **Scope** — the URL set to compare. It must be identical on both sides. Comparing 5,000 URLs
    before and 4,200 after does not tell you 800 pages disappeared; it may just mean the crawl
    stopped early.
-2. **Crawl settings** — same depth, same rendering mode, same user agent, same robots handling.
-   Differences here produce false regressions that waste a team's day.
+2. **Crawl comparability** — confirm all seven of these match across both crawls: URL scope, crawl
+   settings, user agent, rendering mode, authentication, parameter handling, and inclusion and
+   exclusion rules. If they do not match, stop and report the differences rather than producing a
+   partial comparison. Mismatches generate false regressions that waste a team's day and cost the
+   report its credibility on first read.
 3. **What was intended to change.** Without this, every deliberate change gets reported as a
    regression and the report loses credibility on first read.
 
@@ -88,8 +91,15 @@ be on staging. Check both explicitly on every release regardless of what the dif
 
 ## Output
 
-| Severity | Regression | URLs Affected | High-Value URLs | Traffic at Risk | Before | After | Expected? | Owner | Verification Step |
-|---|---|---:|---:|---:|---|---|---|---|---|
+| Severity | Regression | URLs Affected | High-Value URLs | Traffic at Risk | Before | After | Likely Root Cause | Expected? | Owner | Acceptance Criteria | Verification Step |
+|---|---|---:|---:|---:|---|---|---|---|---|---|---|
+
+Acceptance criteria and verification step are different things and both are needed. The criteria
+state what must be true; the step states how to check it. Step 8 re-runs against the criteria, so a
+report without them cannot be re-verified.
+
+Save this output. The re-verification run loads it back and evaluates each item against its
+recorded criteria, which is impossible if the report only exists in a chat thread.
 
 Lead with a one-line verdict: whether anything needs immediate attention, and if so what. A
 regression report that buries a P0 in row 40 has failed at its only job.

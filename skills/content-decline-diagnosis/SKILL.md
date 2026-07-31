@@ -88,8 +88,8 @@ Two rules matter more than the taxonomy itself:
 Produce this table first, then a short summary. Save as Markdown or CSV rather than pasting
 50 rows into chat.
 
-| Priority | URL | Clicks Lost | Ranking Change | Cause | Evidence | Recommended Action | Fallback Action | Confidence | Owner |
-|---|---|---:|---:|---|---|---|---|---|---|
+| Priority | URL | Clicks Lost | Click Decline | Impression Change | Position Change | Likely Cause | Supporting Evidence | Primary Action | Fallback Action | Confidence |
+|---|---|---:|---:|---:|---:|---|---|---|---|---|
 
 Priority is absolute clicks lost weighted by how fixable the cause is. A page that lost 400
 clicks to a broken canonical outranks a page that lost 600 clicks to a demand collapse, because
