@@ -1,0 +1,10 @@
+{
+  "name": "agentic-seo-skills",
+  "version": "0.1.0",
+  "description": "Eight agentic SEO workflows for Claude: content decline diagnosis, technical sprint triage, competitor growth investigation, brief generation, internal linking, portfolio decisions, AI citation mapping, and release regression monitoring.",
+  "author": {
+    "name": "Faizan Ali"
+  },
+  "keywords": ["seo", "content", "semrush", "search-console", "geo", "aeo", "agentic"],
+  "license": "MIT"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "agentic-seo-skills",
+  "owner": {
+    "name": "Faizan Ali"
+  },
+  "version": "0.1.0",
+  "description": "Agentic SEO workflow skills for Claude.",
+  "plugins": [
+    {
+      "name": "agentic-seo-skills",
+      "source": "./",
+      "description": "Eight agentic SEO workflows covering diagnosis, triage, research, and monitoring.",
+      "category": "seo",
+      "tags": ["seo", "content", "analytics"]
+    }
+  ]
+}
