@@ -28,11 +28,11 @@ different list from ten items for a dedicated squad.
 
 | Need | Preferred tool | If unavailable |
 |---|---|---|
-| Issue list | Semrush `siteaudit_research` on an existing project | Screaming Frog / Sitebulb export |
-| Which project IDs exist | Semrush `projects_research` | Ask the user |
-| Traffic value of affected URLs | GSC MCP `analytics_query`, `analytics_top_pages` | GA4 landing page export |
-| Ranking value of affected URLs | Semrush `url_research` | Rank tracker export |
-| Indexation reality check | GSC MCP `inspection_batch` | Live crawl |
+| Issue list | Semrush `site_audit` on an existing project | Screaming Frog / Sitebulb export |
+| Which project IDs exist | Semrush `projects` | Ask the user |
+| Traffic value of affected URLs | GSC MCP `analytics_query` with `dimensions: ["page"]` | GA4 landing page export |
+| Ranking value of affected URLs | Semrush `organic_research` / `resource_organic` | Rank tracker export |
+| Indexation reality check | GSC MCP `inspection_inspect` | Live crawl |
 | Live page or template inspection | Firecrawl `firecrawl_scrape` | `web_fetch` |
 | Ticket creation | GitHub, Jira, or Linear connector | Output a ticket-ready Markdown block |
 

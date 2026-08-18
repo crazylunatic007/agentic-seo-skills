@@ -57,7 +57,7 @@ page. **Fallback** — Fix internal linking so the intended page receives the to
 **Signature** — Average position worsens, ranking keyword count falls, impressions fall
 proportionally. Demand for the same keywords is flat.
 
-**Confirms it** — Ranking keyword loss visible in `url_research` across two periods, and the lost
+**Confirms it** — Ranking keyword loss visible in `organic_research` / `resource_organic` across two periods, and the lost
 positions are now held by other domains.
 
 **Rules it out** — Position held while clicks fell. That is a CTR problem, not a ranking problem.

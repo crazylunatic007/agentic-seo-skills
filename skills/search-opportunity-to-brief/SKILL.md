@@ -32,9 +32,9 @@ If the user has an in-house brief format, ask for an example and match it. The t
 |---|---|---|
 | Keyword expansion, questions, related terms | Semrush `keyword_research` | Any keyword tool export |
 | Who ranks across the topic | Semrush `organic_research` | SERP capture across the query set |
-| What a specific URL ranks for | Semrush `url_research` | Rank tracker |
+| What a specific URL ranks for | Semrush `organic_research` / `resource_organic` | Rank tracker |
 | SERP shape, features, AI Overview | SerpAPI | Manual SERP capture |
-| Existing coverage and current performance | GSC MCP `analytics_query`, `seo_cannibalization` | Site search plus GSC export |
+| Existing coverage and current performance | GSC MCP `analytics_query` with `dimensions: ["query","page"]` (no dedicated cannibalization tool exists; read the overlap manually) | Site search plus GSC export |
 | Reading competitor pages | Firecrawl `firecrawl_scrape` | `web_fetch` |
 | Existing content inventory | CMS, sitemap, or Firecrawl `firecrawl_map` | Ask the user for a URL list |
 | Delivering the brief | Google Drive, Notion, or CMS connector | Save as Markdown and present it |

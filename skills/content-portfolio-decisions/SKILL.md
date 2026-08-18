@@ -31,14 +31,14 @@ Establish, and write these down in the output so the decisions can be re-read la
 
 | Need | Preferred tool | If unavailable |
 |---|---|---|
-| Full URL inventory | CMS export, sitemap, Firecrawl `firecrawl_map` | Semrush `siteaudit_research` crawl |
-| Clicks, impressions, position, both windows | GSC MCP `analytics_query`, `analytics_compare_periods` | GSC UI export |
-| Indexability | GSC MCP `inspection_batch` | Crawl data |
-| Ranking keyword coverage | Semrush `url_research` | Rank tracker |
-| Referring domains per URL | Semrush `backlink_research` | Ahrefs or Majestic |
-| Engagement and conversions | GA4 via Supermetrics `data_query` | GA4 export |
+| Full URL inventory | CMS export, sitemap, Firecrawl `firecrawl_map` | Semrush `site_audit` crawl |
+| Clicks, impressions, position, both windows | GSC MCP `analytics_query`, `analytics_compare` | GSC UI export |
+| Indexability | GSC MCP `inspection_inspect` | Crawl data |
+| Ranking keyword coverage | Semrush `organic_research` / `resource_organic` | Rank tracker |
+| Referring domains per URL | Semrush `backlinks_research` | Ahrefs or Majestic |
+| Engagement and conversions | GA4 via GSC MCP `analytics_advanced` | GA4 export |
 | Publish and update dates | CMS export | Firecrawl `firecrawl_scrape` metadata |
-| Topic overlap | GSC MCP `seo_cannibalization` plus content similarity | Manual review of title clusters |
+| Topic overlap | GSC MCP `analytics_query` with `dimensions: ["query","page"]`, read manually for multiple URLs on one query, plus content similarity | Manual review of title clusters |
 | AI citations or brand visibility | Whatever export the user has | Omit, and say it was omitted |
 
 Conversions are the signal most often missing and most often decisive. Ask for it explicitly rather

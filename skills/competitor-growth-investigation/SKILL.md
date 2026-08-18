@@ -30,11 +30,11 @@ Establish:
 
 | Need | Preferred tool | If unavailable |
 |---|---|---|
-| Domain organic performance over time | Semrush `organic_research`, `overview_research` | Any visibility index |
-| Which pages drive the change | Semrush `organic_research` pages report, `url_research` | Rank tracker with URL data |
+| Domain organic performance over time | Semrush `organic_research`, `domain_overview` | Any visibility index |
+| Which pages drive the change | Semrush `organic_research` (`resource_organic_unique`, `resource_organic`) | Rank tracker with URL data |
 | Which keywords moved | Semrush `organic_research` keyword report | SERP capture over time |
-| Traffic and audience context | Semrush `trends_research` | Similarweb or equivalent |
-| Position tracking against a fixed set | Semrush `tracking_research` | Any rank tracker |
+| Traffic and audience context | Semrush `traffic_overview` | Similarweb or equivalent |
+| Position tracking against a fixed set | Semrush `position_tracking` | Any rank tracker |
 | What the winning page actually says | Firecrawl `firecrawl_scrape` | `web_fetch` |
 | Current SERP state | SerpAPI | Manual SERP check |
 | Alerting | Slack or email connector | Return the report and let a person send it |

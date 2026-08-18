@@ -28,11 +28,11 @@ Establish:
 
 | Need | Preferred tool | If unavailable |
 |---|---|---|
-| Site structure and URL inventory | Firecrawl `firecrawl_map`, or Semrush `siteaudit_research` | Sitemap plus CMS export |
-| Internal link graph | Semrush `siteaudit_research` (existing project), or a crawler export | Firecrawl `firecrawl_crawl` and parse links |
+| Site structure and URL inventory | Firecrawl `firecrawl_map`, or Semrush `site_audit` | Sitemap plus CMS export |
+| Internal link graph | Semrush `site_audit` (existing project), or a crawler export | Firecrawl `firecrawl_crawl` and parse links |
 | Page content | Firecrawl `firecrawl_scrape` or `firecrawl_crawl` | `web_fetch` per URL |
-| Which pages have authority to lend | GSC MCP `analytics_top_pages`, Semrush `url_research` | Any traffic export |
-| Backlinks per page | Semrush `backlink_research` | Ahrefs or Majestic |
+| Which pages have authority to lend | GSC MCP `analytics_query` with `dimensions: ["page"]`, Semrush `organic_research` / `resource_organic` | Any traffic export |
+| Backlinks per page | Semrush `backlinks_research` | Ahrefs or Majestic |
 | Applying changes | CMS connector | Output a change list for a human |
 
 ## Workflow

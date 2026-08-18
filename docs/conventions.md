@@ -54,14 +54,14 @@ the equivalent and say which one was used in the output.
 
 | Need | Preferred | Substitute |
 |---|---|---|
-| Actual search performance | Google Search Console MCP (`analytics_query`, `analytics_compare_periods`) | GSC UI export, Looker Studio export |
-| Indexation state of a URL | GSC `inspection_inspect` / `inspection_batch` | Live crawl plus `site:` check |
-| Rankings, competitors, keyword data | Semrush MCP (`organic_research`, `url_research`, `keyword_research`) | Ahrefs, Sistrix, or another rank dataset |
-| Backlinks | Semrush MCP `backlink_research` | Ahrefs, Majestic, Moz |
-| Site crawl and technical issues | Semrush MCP `siteaudit_research` (needs an existing Site Audit project) | Screaming Frog or Sitebulb export, Firecrawl `firecrawl_crawl` |
+| Actual search performance | Google Search Console MCP (`analytics_query`, `analytics_compare`) | GSC UI export, Looker Studio export |
+| Indexation state of a URL | GSC `inspection_inspect` | Live crawl plus `site:` check |
+| Rankings, competitors, keyword data | Semrush MCP (`organic_research`, `keyword_research`, `domain_overview`) | Ahrefs, Sistrix, or another rank dataset |
+| Backlinks | Semrush MCP `backlinks_research` | Ahrefs, Majestic, Moz |
+| Site crawl and technical issues | Semrush MCP `site_audit` (needs an existing Site Audit project) | Screaming Frog or Sitebulb export, Firecrawl `firecrawl_crawl` |
 | Reading live page content | Firecrawl `firecrawl_scrape` / `firecrawl_crawl` | `web_fetch`, headless browser |
 | SERP features and AI Overviews | SerpAPI | Manual SERP capture |
-| Engagement and conversions | GA4 via Supermetrics `data_query`, or GSC MCP `analytics_*` GA4 tools | GA4 UI export |
+| Engagement and conversions | GA4 via GSC MCP `analytics_advanced`, or GSC MCP `analytics_*` GA4 tools | GA4 UI export |
 | Raw Semrush reports | Semrush `get_report_schema` then `execute_report` | Semrush API directly |
 
 Cap every report at a sensible `display_limit` (20 is usually enough for analysis) so a single

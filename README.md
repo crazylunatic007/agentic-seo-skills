@@ -62,23 +62,51 @@ Full detail in [docs/conventions.md](docs/conventions.md).
 
 ## Install
 
-**As a Claude Code plugin** (all eight at once):
+Pick the path that matches where you work. All eight skills install together in every case.
+
+### Claude Code
 
 ```bash
-claude plugin marketplace add <your-github-username>/agentic-seo-skills
+git clone https://github.com/crazylunatic007/agentic-seo-skills.git
+mkdir -p ~/.claude/skills
+cp -r agentic-seo-skills/skills/* ~/.claude/skills/
+```
+
+To scope them to one project instead of your whole machine, copy into `.claude/skills/`
+inside that project directory.
+
+For a single skill, copy just that folder:
+
+```bash
+cp -r agentic-seo-skills/skills/content-decline-diagnosis ~/.claude/skills/
+```
+
+### Claude Code, as a plugin
+
+```bash
+claude plugin marketplace add crazylunatic007/agentic-seo-skills
 claude plugin install agentic-seo-skills@agentic-seo-skills
 ```
 
-**As individual skills** in Claude Code:
+### Claude on the web or desktop
+
+Skills upload as a zip of the skill folder, one per skill. Zip each folder under `skills/`,
+then add it under Settings, Capabilities, Skills. The `dist/` folder in this repo contains
+all eight already zipped and ready to upload.
 
 ```bash
-cp -r skills/content-decline-diagnosis ~/.claude/skills/
+cd agentic-seo-skills/skills
+for d in */; do (cd "$d" && zip -qr "../../dist/${d%/}.zip" .); done
 ```
 
-Or drop the folder in `.claude/skills/` inside a project to scope it to that project.
+If Skills are not available on your plan, paste the contents of a SKILL.md into your Project
+instructions instead. You lose the reference files and scripts, so prompts 6 and 8 will not work,
+but the rest degrade gracefully.
 
-**In a Claude Project on claude.ai**, upload the skill folder through the skills interface, or
-add the SKILL.md contents to the project instructions if skills are not enabled on the plan.
+### Verify the install
+
+Ask Claude: `List the skills you currently have available.` All eight should come back by name.
+If they do not, the folder is in the wrong place or the SKILL.md frontmatter did not parse.
 
 ## Connectors
 
@@ -89,7 +117,7 @@ if you have the same stack:
 - **Semrush MCP** for rankings, competitors, keywords, backlinks, and Site Audit
 - **Firecrawl** for crawling and reading live pages
 - **SerpAPI** for SERP features and AI Overviews
-- **GA4** via Supermetrics or an equivalent for engagement and conversions
+- **GA4** via the same Search Console MCP server (`analytics_advanced`) for engagement and conversions
 
 If a connector is missing, each skill lists a substitute and instructs Claude to say which source it
 actually used. None of them require the full set.

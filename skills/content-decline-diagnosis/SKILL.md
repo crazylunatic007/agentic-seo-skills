@@ -31,12 +31,12 @@ four clicks to one.
 
 | Need | Preferred tool | If unavailable |
 |---|---|---|
-| Actual clicks, impressions, CTR, position | GSC MCP `analytics_compare_periods`, `analytics_query` | GSC UI export |
-| Indexation and canonical state | GSC MCP `inspection_inspect` / `inspection_batch` | Live crawl plus site: check |
-| Ranking keywords per URL | Semrush `url_research` | Any rank tracking export |
+| Actual clicks, impressions, CTR, position | GSC MCP `analytics_compare`, `analytics_query` | GSC UI export |
+| Indexation and canonical state | GSC MCP `inspection_inspect` | Live crawl plus site: check |
+| Ranking keywords per URL | Semrush `organic_research` / `resource_organic` | Any rank tracking export |
 | Competitor movement on the same queries | Semrush `organic_research` | SERP capture |
 | Keyword demand trend | Semrush `keyword_research` | Google Trends |
-| Referring domains per URL | Semrush `backlink_research` | Ahrefs or Majestic export |
+| Referring domains per URL | Semrush `backlinks_research` | Ahrefs or Majestic export |
 | Current SERP shape and AI Overview presence | SerpAPI | Manual SERP check |
 | Live page content and internal links | Firecrawl `firecrawl_scrape` | `web_fetch` |
 
@@ -63,7 +63,7 @@ honest about what was actually checked versus assumed.
 Step 4 comes early on purpose. Technical causes are cheap to confirm, produce the highest
 confidence answers, and make the rest of the investigation unnecessary for that URL.
 
-Work in batches. Inspecting 50 URLs one at a time wastes the run; use `inspection_batch` and
+Work in batches. Inspecting 50 URLs one at a time wastes the run; use `inspection_inspect` with a list of URLs and
 batched analytics queries, then drill into the outliers.
 
 ## Classification

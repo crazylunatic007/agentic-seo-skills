@@ -42,12 +42,12 @@ partial reconstruction and that absence of evidence is not evidence of absence.
 |---|---|---|
 | Pre-release crawl | Firecrawl `firecrawl_crawl`, Screaming Frog, or Semrush Site Audit | Reconstruct from sitemap plus GSC |
 | Post-release crawl | Same tool, same settings | Same |
-| Ongoing issue detection | Semrush `siteaudit_research` on an existing project | Repeat crawl |
-| Historical value of affected URLs | GSC MCP `analytics_query`, `analytics_top_pages` | GA4 landing page export |
-| Indexation state | GSC MCP `inspection_batch` | Live checks |
-| Sitemap membership | GSC MCP `sitemaps_list`, `sitemaps_get` | Fetch the sitemap directly |
+| Ongoing issue detection | Semrush `site_audit` on an existing project | Repeat crawl |
+| Historical value of affected URLs | GSC MCP `analytics_query` with `dimensions: ["page"]` | GA4 landing page export |
+| Indexation state | GSC MCP `inspection_inspect` | Live checks |
+| Sitemap membership | GSC MCP `sitemaps_list` (pass `feedUrl` for one sitemap) | Fetch the sitemap directly |
 | Structured data validity | GSC MCP `schema_validate` | Any schema validator |
-| Core Web Vitals | GSC MCP `pagespeed_core_web_vitals` | PageSpeed Insights |
+| Core Web Vitals | GSC MCP `pagespeed_analyze` with `cwvOnly: true` | PageSpeed Insights |
 | What shipped | GitHub or deployment connector | Ask the team for the change list |
 | Notifying owners | Slack, Jira, or Linear connector | Return the report for a human to send |
 

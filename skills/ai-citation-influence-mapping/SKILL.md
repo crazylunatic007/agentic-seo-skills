@@ -35,7 +35,7 @@ same thing, and conflating them is the most common error in this area.
 | Need | Preferred tool | If unavailable |
 |---|---|---|
 | Cited sources per prompt | The user's AI visibility export or connected dataset | Cannot proceed. Say so |
-| Domain authority and backlink profile of cited sources | Semrush `backlink_research`, `overview_research` | Any authority metric |
+| Domain authority and backlink profile of cited sources | Semrush `backlinks_research`, `domain_overview` | Any authority metric |
 | Organic visibility of cited sources | Semrush `organic_research` | Any visibility index |
 | What a cited page actually says | Firecrawl `firecrawl_scrape` | `web_fetch` |
 | Competitor mentions across sources | Firecrawl `firecrawl_search`, or the citation export | Manual review |
