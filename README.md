@@ -62,9 +62,30 @@ Full detail in [docs/conventions.md](docs/conventions.md).
 
 ## Install
 
-Pick the path that matches where you work. All eight skills install together in every case.
+Pick the path that matches where you work. All eight skills install together in every case,
+so nobody has to repeat these steps eight times.
 
-### Claude Code
+### No coding experience (Claude.ai web or desktop)
+
+1. Download [`dist/all-skills.zip`](dist/all-skills.zip) — one file, containing all eight
+   skills already zipped individually.
+2. Unzip it. You'll get eight files, one per skill (e.g. `content-decline-diagnosis.zip`).
+3. In Claude, go to **Settings → Capabilities → Skills → Upload skill**, and upload each of
+   the eight zips one at a time.
+
+No terminal, no git, no folders to find. Prefer a single skill instead of all eight? Download
+that skill's zip directly from `dist/` — e.g. [`dist/content-decline-diagnosis.zip`](dist/content-decline-diagnosis.zip).
+
+### Claude Code, as a plugin (fastest if you have the CLI)
+
+```bash
+claude plugin marketplace add crazylunatic007/agentic-seo-skills
+claude plugin install agentic-seo-skills@agentic-seo-skills
+```
+
+Two commands, all eight skills, no folder copying.
+
+### Claude Code, manual copy
 
 ```bash
 git clone https://github.com/crazylunatic007/agentic-seo-skills.git
@@ -73,35 +94,25 @@ cp -r agentic-seo-skills/skills/* ~/.claude/skills/
 ```
 
 To scope them to one project instead of your whole machine, copy into `.claude/skills/`
-inside that project directory.
-
-For a single skill, copy just that folder:
+inside that project directory. For a single skill, copy just that folder:
 
 ```bash
 cp -r agentic-seo-skills/skills/content-decline-diagnosis ~/.claude/skills/
 ```
 
-### Claude Code, as a plugin
+### No Skills on your plan
+
+Paste the contents of a SKILL.md into your Project instructions instead. You lose the
+reference files and scripts, so prompts 6 and 8 will not work, but the rest degrade gracefully.
+
+### Rebuilding the zips
+
+The `dist/` zips are committed so nobody needs a terminal to get them. If you edit a skill,
+regenerate them with the stdlib-only script:
 
 ```bash
-claude plugin marketplace add crazylunatic007/agentic-seo-skills
-claude plugin install agentic-seo-skills@agentic-seo-skills
+python scripts/build_dist.py
 ```
-
-### Claude on the web or desktop
-
-Skills upload as a zip of the skill folder, one per skill. Zip each folder under `skills/`,
-then add it under Settings, Capabilities, Skills. The `dist/` folder in this repo contains
-all eight already zipped and ready to upload.
-
-```bash
-cd agentic-seo-skills/skills
-for d in */; do (cd "$d" && zip -qr "../../dist/${d%/}.zip" .); done
-```
-
-If Skills are not available on your plan, paste the contents of a SKILL.md into your Project
-instructions instead. You lose the reference files and scripts, so prompts 6 and 8 will not work,
-but the rest degrade gracefully.
 
 ### Verify the install
 
