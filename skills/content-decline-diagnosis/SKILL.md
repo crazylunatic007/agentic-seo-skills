@@ -46,8 +46,19 @@ Cap Semrush reports at `display_limit: 20` unless the user asks for more.
 
 ## Workflow
 
-Copy this checklist into the response and tick items off as they complete. It keeps long runs
-honest about what was actually checked versus assumed.
+Post this checklist in the response, with items ticked off as they complete, immediately before
+the output table — every run, no matter how confident an early finding feels. An output table
+with no posted, ticked checklist above it is an incomplete run: go back and post one before
+treating the diagnosis as done.
+
+Red flags — stop and go back if you catch yourself thinking:
+- "The top few URLs already have a strong answer, so this is basically done" — the queue isn't
+  done until every surviving URL past the materiality floor has been through steps 4-8, not just
+  the ones you looked at first.
+- "I'll mark this one `Insufficient evidence` instead of re-running the check" — insufficient
+  evidence is a conclusion reached *after* running steps 5-8 and staying ambiguous, not a
+  substitute for running them. If the tool was never called, the evidence isn't insufficient —
+  it's absent.
 
 - [ ] 1. Pull period-over-period performance for the scope and rank URLs by absolute clicks lost.
 - [ ] 2. Apply the materiality floor. Drop everything below it.
@@ -61,7 +72,9 @@ honest about what was actually checked versus assumed.
 - [ ] 10. Assign one primary action and one fallback action per URL.
 
 Step 4 comes early on purpose. Technical causes are cheap to confirm, produce the highest
-confidence answers, and make the rest of the investigation unnecessary for that URL.
+confidence answers, and make the rest of the investigation unnecessary — but only for that one
+URL. Every other surviving URL still needs steps 5-8. Confirming a redirect or noindex on your
+first URL is not evidence about the second, third, or fortieth.
 
 Work in batches. Inspecting 50 URLs one at a time wastes the run; use `inspection_inspect` with a list of URLs and
 batched analytics queries, then drill into the outliers.
@@ -78,8 +91,11 @@ evidence
 
 Two rules matter more than the taxonomy itself:
 
-- **Prefer `Insufficient evidence` over a guess.** A row that says which check would resolve the
-  ambiguity is more useful than a confident label that sends a writer down the wrong path.
+- **Prefer `Insufficient evidence` over a guess — after running the checks, not instead of
+  running them.** Reach this label only once steps 5-8 have actually been attempted for that URL
+  and the result is still ambiguous. A row that says which check would resolve the ambiguity is
+  more useful than a confident label that sends a writer down the wrong path — but "insufficient
+  evidence" because a tool was never called is a skipped step wearing an honest label.
 - **Check for multiple causes.** Declines often stack. Report the dominant cause, and note the
   secondary one in the evidence column rather than forcing a single label.
 
